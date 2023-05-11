@@ -59,7 +59,7 @@
     height: auto;
   }
   html {
-    font-size: 0.45rem;
+    font-size: 0.84rem * 0.3;
   }
 }
 
@@ -69,7 +69,7 @@
     height: auto;
   }
   html {
-    font-size: 0.45rem;
+    font-size: 0.84rem * 0.4;
   }
 }
 
@@ -79,7 +79,7 @@
     height: auto;
   }
   html {
-    font-size: 0.45rem;
+    font-size: 0.84rem * 0.4;
   }
 }
 
@@ -90,7 +90,7 @@
   }
 
   html {
-    font-size: 0.55rem;
+    font-size: 0.84rem * 0.7;
   }
 
 }
@@ -98,7 +98,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
   .aspect_ratio {
     max-width: var(--contained_width_ratio);
