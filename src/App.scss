@@ -3,6 +3,9 @@
 }
 
 
+.wrap {
+  flex-wrap: wrap;
+}
 
 .col {
   display: flex;
@@ -52,55 +55,152 @@
   bottom: 0;
 }
 
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .aspect_ratio {
-    height: auto;
-  }
-  html {
-    font-size: 0.84rem * 0.3;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .aspect_ratio {
-    height: auto;
-  }
-  html {
-    font-size: 0.84rem * 0.4;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .aspect_ratio {
-    height: auto;
-  }
-  html {
-    font-size: 0.84rem * 0.4;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .aspect_ratio {
-    height: auto;
-  }
-
-  html {
-    font-size: 0.84rem * 0.7;
-  }
+.link {
 
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 0.84rem;
+.link.active {
+  color: #FF6DCD;
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .reverse-col-1200 {
+    display: flex;
+    flex-direction: column-reverse;
+    width: auto;
+
+    // & > * {
+    //   width: 100%;
+    // }
   }
-  .aspect_ratio {
-    max-width: var(--contained_width_ratio);
+  .expand-onmobile {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: unset !important;
+    & * {
+      aspect-ratio: unset !important;
+      height: auto !important;
+      position: initial;
+    }
+    & img:not(:last-child):not(:only-of-type) {
+      padding-right: 1rem;
+    }
+    & span:not(:last-child):not(:only-of-type) {
+      padding-right: 1rem;
+    }
+    
+    & span {
+      width: unset;
+    }
+
+    &.mobile-width-100 {
+      width: 100%;
+    }
+  }
+
+  .mobile-aspect-ratio { 
+    aspect-ratio: var(--mobile-aspect-ratio) !important ;
+    // & *.row {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+  }
+
+  .mobile-max-width {
+    max-width: var(--mobile-max-width);
+  }
+  
+  .mobile-width-100 {
+    width: 100%;
+  }
+
+  .col-1200 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+
+    // & > * {
+    //   width: 100%;
+    // }
+  }
+
+  html {
+    // font-size: 0.84rem * 0.4;
+  }
+}
+
+@media only screen and (max-width: 1800px) { 
+  
+ 
+  .expand-onmobile {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: unset !important;
+    & * {
+      aspect-ratio: unset !important;
+      height: auto !important;
+      position: initial;
+    }
+
+    & img:not(:last-child) {
+      padding-right: 1rem;
+    }
+
+    & span:not(:last-child) {
+      padding-right: 1rem;
+    }
+
+    &.mobile-width-100 {
+      width: 100%;
+    }
+    
+  }
+
+  .min-size {
+    min-height: var(--min-height) !important;
+    max-height: var(--min-height) !important;
+    min-width: var(--min-width) !important;
+    height: unset !important;
+
+    & * {
+      height: unset !important;
+      flex-basis: 50%;
+    }
+  }
+  .mobile-aspect-ratio { 
+    
+    & *.row {
+      flex-wrap: wrap;
+      
+      flex-grow: 1;
+      aspect-ratio: unset !important;
+      & * {
+        aspect-ratio: unset !important;
+      }
+    }
+
+    aspect-ratio: var(--mobile-aspect-ratio) !important ;
+    width: 100%;
+  }
+
+  .mobile-max-width {
+    max-width: var(--mobile-max-width);
+  }
+
+ 
+
+  .reverse-col-1800 {
+    display: flex;
+    flex-direction: column-reverse;
+    width: auto;
+
+    // & > * {
+    //   width: 100%;
+    // }
   }
 }
