@@ -3,13 +3,22 @@ import './App.scss';
 import image from "./resources/graphics/asd.png";
 import image1 from "./resources/graphics/group0.png";
 import image2 from "./resources/graphics/Group45.png";
+
 import twitter_svg from './resources/graphics/social-media/Twitter.svg';
 import linkedin_svg from './resources/graphics/social-media/LinkedIN.svg';
 import angel_svg from './resources/graphics/social-media/Group 31.svg';
 import stack_svg from './resources/graphics/social-media/Group 32.svg';
 import medium_svg from './resources/graphics/social-media/Group.svg';
 import github_svg from './resources/graphics/social-media/Github.svg';
-import github_white_svg from './resources/graphics/social-media/Github-white.png';
+import github_white_svg from './resources/graphics/social-media/white/Github.svg';
+import github_white_b_svg from './resources/graphics/social-media/white/Github.svg';
+
+import twitter_white_svg from './resources/graphics/social-media/white/Twitter.svg';
+import linkedin_white_svg from './resources/graphics/social-media/white/LinkedIN.svg';
+import angel_white_svg from './resources/graphics/social-media/white/Group 31.svg';
+import stack_white_svg from './resources/graphics/social-media/white/Group 32.svg';
+import medium_white_svg from './resources/graphics/social-media/white/Group.svg';
+
 import github_black_svg from './resources/graphics/icons-symbols/image-22.svg';
 import robot_svg from './resources/graphics/icons-symbols/Robot.png';
 import cookie_svg from './resources/graphics/icons-symbols/Cookie.png';
@@ -26,6 +35,7 @@ import microverse_png from './resources/graphics/icons-symbols/microverse.png';
 import triplecyber_png from './resources/graphics/icons-symbols/triplecyber.png';
 import vp_png from './resources/graphics/icons-symbols/vp.png';
 import dix_png from './resources/graphics/icons-symbols/dix.png';
+import black_background from './resources/graphics/Vector3.png';
 import { useNavigate } from "react-router-dom";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
@@ -36,22 +46,24 @@ import fetchQuotes from './data/fetchQuotes';
 
 function Home() {
   return <div class="col">
-    <div style={{ aspectRatio: 1920 / 320, }}>
+    <div style={{ aspectRatio: 12 / 1, }}>
     </div>
-    <div className='row center expand-onmobile' style={{ aspectRatio: 1920 / 437 }}>
+    <div className='row center expand-onmobile mobile-padding-1800' style={{ "--mobile-padding-1800": "0 0 0 1rem", aspectRatio: 1920 / 437 }}>
       <div className='relative expand-onmobile' style={{ aspectRatio: 1204 / 437, height: "100%" }}>
-        <div class="absolute row  reverse-col-1800">
-          <span style={{ fontSize: "3.625rem", fontWeight: 700, backgroundColor: "", lineHeight: "120.689655172%", fontFamily: "'Poppins'", letterSpacing: "-1px", color: "#42446E", flexGrow: 1 }}>
+        <div class="absolute row  reverse-col-1200" style={{}}>
+          <span style={{ aspectRatio: 602 / 437, height: "100%", fontSize: "3.625rem", fontWeight: 700, backgroundColor: "", lineHeight: "120.689655172%", fontFamily: "'Poppins'", letterSpacing: "-1px", color: "#42446E", flexGrow: 1 }}>
             Hi there 👋,<br />
             My name is<br />
             <span style={{ color: "#FF6DCD" }}>Armando</span><br />
-            I am a Frontend<br />
+            I am a Front End<br />
             Engineer &<br />
             I build apps for <span style={{ color: "#FF6DCD" }}>fun</span>
           </span>
           <span class="center " style={{ width: "100%" }}>
-            <div class="" style={{ aspectRatio: 349 / 437, backgroundColor: "", height: "100%" }}>
-              <div style={{ aspectRatio: 1, width: "100%", backgroundSize: "contain", backgroundImage: `url(${image})`, minHeight: "10rem", minWidth: "10rem" }}>
+            <div class="row" style={{ aspectRatio: 602 / 437, backgroundColor: "", height: "100%" }}>
+              <div class='hide-1200' style={{aspectRatio: 253 / 437, height: "100%"}}/>
+              <div class='center' style={{ aspectRatio: 349 / 437,  height: "100%"  }}>
+                <div style={{aspectRatio: 1,width: "100%",backgroundSize: "contain", backgroundImage: `url(${image})`, minHeight: "15rem", minWidth: "15rem"}}/>
               </div>
             </div>
           </span>
@@ -59,29 +71,42 @@ function Home() {
       </div>
     </div>
     <div style={{ aspectRatio: 1920 / 146 }}></div>
-    <div class="center" style={{ aspectRatio: 1920 / 106.02 }}>
+    <div class="center mobile-padding-1800" style={{ "--mobile-padding-1800": "0 0 0 1rem", aspectRatio: 1920 / 106.02 }}>
       <div class="row expand-onmobile" style={{ aspectRatio: 1244 / 106.02, height: "100%" }}>
         <div style={{ minHeight: "5rem", minWidth: "20rem", aspectRatio: 524 / 106.02, height: "100%", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundImage: `url(${image1})` }} />
       </div>
 
     </div>
     <div style={{ aspectRatio: 1920 / 90.98 }}></div>
-    <div class="center" style={{ aspectRatio: 1920 / 28 }}>
-      <div class="row col-1200 expand-onmobile" style={{ aspectRatio: 1244 / 28.82, height: "100%" }}>
+    <div class="center mobile-padding-1800" style={{ "--mobile-padding-1800": "0 0 0 1rem", aspectRatio: 1920 / 28 }}>
+      <div class="row col-1200 expand-onmobile" style={{ aspectRatio: 1244 / 28.82, height: "100%", }}>
         <span style={{ fontSize: "1.125rem", fontFamily: "'Poppins'", lineHeight: "150%", fontWeight: 600, color: "#727274" }}>My works in social networks </span>
         <div class='row' style={{ height: "100%" }}>
           <div style={{ aspectRatio: 54 / 28, height: "100%" }} />
-          <img src={twitter_svg} alt="React Logo" style={{ aspectRatio: 27 / 22.31 }} />
+
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={twitter_svg} alt="React Logo" style={{ aspectRatio: 27 / 22.31 }} />
+          </div>
           <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
-          <img src={linkedin_svg} alt="React Logo" style={{ aspectRatio: 24.7 / 23.58 }} />
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={linkedin_svg} alt="React Logo" style={{ aspectRatio: 24.7 / 23.58 }} />
+          </div>
           <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
-          <img src={angel_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={angel_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+          </div>
           <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
-          <img src={medium_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={medium_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+          </div>
           <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
-          <img src={stack_svg} alt="React Logo" style={{ aspectRatio: 26 / 28.82 }} />
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={stack_svg} alt="React Logo" style={{ aspectRatio: 26 / 28.82 }} />
+          </div>
           <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
-          <img src={github_svg} alt="React Logo" style={{ aspectRatio: 27.46 / 27 }} />
+          <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+            <img class='link' src={github_svg} alt="React Logo" style={{ aspectRatio: 27.46 / 27 }} />
+          </div>
         </div>
       </div>
     </div>
@@ -90,9 +115,9 @@ function Home() {
     <div style={{ aspectRatio: 1920 / 15 }}></div>
     <span style={{ fontSize: "2rem", fontFamily: "'Poppins'", textAlign: "center", fontWeight: 400, lineHeight: "150%", color: "#666666" }}>Technologies I’ve been working with recently</span>
     <div style={{ aspectRatio: 1920 / 81, }}></div>
-    <div class="center expand-onmobile" style={{ aspectRatio: 1920 / 113, }}>
+    <div class="center expand-onmobile" style={{ aspectRatio: 1920 / 113, overflowX: "hidden" }}>
       <div class="row " style={{ aspectRatio: 1032.17 / 113, height: "100%" }}>
-        <div class="expand-onmobile mobile-width-100" style={{ aspectRatio: 1032.17 / 113, height: "100%", backgroundPosition: "center", backgroundSize: "cover", backgroundImage: `url(${image2})`, minHeight: "5rem" }} />
+        <div class="expand-onmobile mobile-width-100" style={{ aspectRatio: 1032.17 / 113, height: "100%", backgroundPosition: "center", backgroundSize: "cover", backgroundImage: `url(${image2})`, minHeight: "5rem", minWidth: "46rem" }} />
       </div>
 
     </div>
@@ -101,9 +126,18 @@ function Home() {
     <div style={{ aspectRatio: 1920 / 14 }}></div>
     <span style={{ fontSize: "2rem", fontFamily: "'Poppins'", textAlign: "center", fontWeight: 400, lineHeight: "150%", color: "#666666" }}>These are some of all of them, but i liked them a lot</span>
     <div style={{ aspectRatio: 1920 / 62, }}></div>
-    <div class="center" style={{ aspectRatio: 1920 / 439 }}>
-      <div class='row col-1200 expand-onmobile' style={{ justifyContent: "start", aspectRatio: 1300 / 439, height: "100%" }}>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#86FFFF" }}>
+    <div class="center expand-onmobile" style={{ aspectRatio: 1920 / 439, maxWidth: "100%", overflowX: "hidden" }}>
+      <div class='row col-1200 expand-onmobile mobile-margin-1800 mobile-padding-1800 mobile-margin-1200' style={{
+        "--mobile-margin-1200": "1rem 0 1rem 0",
+        "--negative-mobile-margin-1200": "0 -1rem 0 -1rem",
+        "--mobile-padding-1800": "0 2rem 0 2rem",
+        "--negative-mobile-margin-1800": "0 -1rem 0 -1rem",
+        "--mobile-margin-1800": "0 1rem 0 1rem",
+        justifyContent: "start",
+        aspectRatio: 1300 / 439,
+        height: "100%"
+      }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#86FFFF" }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col'>
@@ -140,7 +174,7 @@ function Home() {
           </div>
         </div>
         <div style={{ aspectRatio: 57 / 439 }}></div>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#ECFF74" }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#ECFF74" }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col'>
@@ -162,7 +196,7 @@ function Home() {
             </div>
             <div class="col">
               <div class="center" style={{ aspectRatio: 389 / 86 }}>
-                <div  class='link' onClick={() => { window.open("https://github.com/SotoArmando/muffinsmastermind", '_blank').focus(); }} style={{ aspectRatio: 1, height: "100%", minHeight: "5rem", minWidth: "5rem", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${github_black_svg})` }} />
+                <div class='link' onClick={() => { window.open("https://github.com/SotoArmando/muffinsmastermind", '_blank').focus(); }} style={{ aspectRatio: 1, height: "100%", minHeight: "5rem", minWidth: "5rem", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${github_black_svg})` }} />
               </div>
               <div style={{ aspectRatio: 389 / 35 }} />
             </div>
@@ -177,7 +211,7 @@ function Home() {
         </div> */}
         </div>
         <div style={{ aspectRatio: 57 / 439 }}></div>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#031CFF" }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#031CFF" }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col' style={{}}>
@@ -216,9 +250,17 @@ function Home() {
       </div>
     </div>
     <div style={{ aspectRatio: 1920 / 49, }}></div>
-    <div class="center" style={{ aspectRatio: 1920 / 439 }}>
-      <div className='row row col-1200 expand-onmobile' style={{ justifyContent: "start", aspectRatio: 1300 / 439, height: "100%" }}>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#FF7979" }}>
+    <div class="center expand-onmobile" style={{ aspectRatio: 1920 / 439, maxWidth: "100%", overflowX: "hidden" }}>
+      <div className='row col-1200 expand-onmobile mobile-margin-1800 mobile-padding-1800 mobile-margin-1200' style={{
+        "--mobile-margin-1200": "1rem 0 1rem 0",
+        "--mobile-padding-1800": "0 2rem 0 2rem",
+        "--negative-mobile-margin-1800": "0 -1rem 0 -1rem",
+        "--mobile-margin-1800": "0 1rem 0 1rem",
+        justifyContent: "start",
+        aspectRatio: 1300 / 439,
+        height: "100%"
+      }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#FF7979" }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col'>
@@ -255,7 +297,7 @@ function Home() {
         </div> */}
         </div>
         <div style={{ aspectRatio: 57 / 439 }}></div>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#D9D9D9" }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#D9D9D9" }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col'>
@@ -292,7 +334,7 @@ function Home() {
           </div>
         </div>
         <div style={{ aspectRatio: 57 / 439 }}></div>
-        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#031CFF", opacity: 0 }}>
+        <div class="row relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1, backgroundColor: "#031CFF", opacity: 0 }}>
           <div style={{ aspectRatio: 25 / 439 }} />
           <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
             <div class='col' style={{}}>
@@ -328,20 +370,58 @@ function Home() {
             <div style={{ aspectRatio: 14 / 84 }} />
           </div>
         </div>
+        {/* <div style={{ aspectRatio: 57 / 439 }}></div>
+        <div class="row relative" style={{ aspectRatio: 1, backgroundColor: "#D9D9D9" }}>
+          <div style={{ aspectRatio: 25 / 439 }} />
+          <div class='col' style={{ justifyContent: "space-between", width: "100%" }}>
+            <div class='col'>
+              <div style={{ aspectRatio: 389 / 84 }} />
+              <div class="center" style={{ aspectRatio: 389 / 87 }}>
+                <div style={{ aspectRatio: 1, height: "100%", minHeight: "5rem", minWidth: "5rem", backgroundSize: "contain", backgroundImage: `url(${nerd_svg})` }}>
+                </div>
+              </div>
+              <div style={{ aspectRatio: 389 / 21 }} />
+              <div class="relative">
+                <div class="absolute">
+                  <span style={{ fontSize: "2rem", fontFamily: "'Inter'", lineHeight: "121.875%" }}>
+                    <span style={{ fontWeight: 500, color: "#FFFFFF" }}>Odin Battleships.</span> Is a Battleships game made using Javascript.
+                  </span>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="center" style={{ aspectRatio: 389 / 86 }}>
+                <div class='link' onClick={() => { window.open("https://github.com/SotoArmando/odin-battleships", '_blank').focus(); }} style={{ aspectRatio: 1, height: "100%", minHeight: "5rem", minWidth: "5rem", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${github_black_svg})` }} />
+              </div>
+              <div style={{ aspectRatio: 389 / 35 }} />
+            </div>
+          </div>
+          <div style={{ aspectRatio: 25 / 439 }} />
+          <div class="absolute row " style={{ justifyContent: "end", aspectRatio: 439 / 84 }}>
+            <div className='col' style={{ aspectRatio: 1, height: "100%" }}>
+              <div style={{ aspectRatio: 84 / 14 }} />
+              <div class='link' onClick={() => { window.open("https://coruscating-torte-ca6d62.netlify.app/", '_blank').focus(); }} style={{ aspectRatio: 1, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${open_svg})` }} />
+            </div>
+            <div style={{ aspectRatio: 14 / 84 }} />
+          </div>
+        </div> */}
       </div>
     </div>
     <div style={{ aspectRatio: 1920 / 108, }}></div>
     <span style={{ fontSize: "3rem", fontFamily: "'Poppins'", textAlign: "center", fontWeight: 700, color: "#FF6DCD" }}>Currently working on</span>
     <div style={{ aspectRatio: 1920 / 84, }}></div>
-    <div class="center relative expand-onmobile" style={{ aspectRatio: 1600 / 893, backgroundColor: "#161622" }}>
+
+    <div class="center relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1600 / 893, backgroundColor: "#161622" }}>
       <div class="center" style={{ aspectRatio: 1180 / 893, height: "100%" }}>
-        <div class="" style={{ aspectRatio: 1180 / 788.02, width: "100%" }}>
+        <div clas="" style={{ aspectRatio: 1180 / 788.02, width: "100%" }}>
           <div class="row col-1200" style={{ justifyContent: "space-between", height: "100%" }}>
             <div style={{ aspectRatio: 576.52 / 788.02, height: "100%", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${infinistats_0})`, minHeight: "75vh", width: "100%" }} />
             <div class="col" style={{ aspectRatio: 240 / 788.02, height: "100%", fontFamily: "'Inter'" }}>
-              <div style={{ aspectRatio: 240 / 3, backgroundColor: "rgba(165,165,255,.15)" }} />
+              <div style={{ aspectRatio: 240 / 3, backgroundColor: "#2B2B43" }} />
               <div style={{ aspectRatio: 240 / 16 }} />
-              <span style={{ fontSize: "2rem", color: "#FFFFFF", lineHeight: "120%", fontWeight: 700 }}>Infinistats</span>
+              <span style={{ fontSize: "2rem", color: "#FFFFFF", lineHeight: "120%", fontWeight: 700, opacity: "0.9" }}>Infinistats</span>
               <div style={{ aspectRatio: 240 / 16 }} />
               <span style={{ fontSize: "1rem", maxWidth: "60rem", color: "rgba(255,255,255,.75)", lineHeight: "140%" }}>Infinistats is a place in mobile apps where users can drive their gaming experience by scheduling and personalizing the game experience.</span>
               <div style={{ aspectRatio: 240 / 19 }} />
@@ -367,12 +447,13 @@ function Home() {
               <div style={{ aspectRatio: 240 / 16 }} />
             </div>
           </div>
+
         </div>
       </div>
       <div class="absolute row " style={{ justifyContent: "end", aspectRatio: 1920 / 84 }}>
         <div className='col' style={{ aspectRatio: 84 / 85.49, height: "100%" }}>
           <div style={{ aspectRatio: 84 / 14 }} />
-          <div style={{ aspectRatio: 1, height: "100%", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${open_white_svg})` }} />
+          <div style={{ aspectRatio: 1, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundImage: `url(${open_white_svg})` }} />
         </div>
         <div style={{ aspectRatio: 14 / 84 }} />
       </div>
@@ -386,8 +467,7 @@ function Home() {
 
       </div>
     </div>
-
-    <div class="center relative expand-onmobile" style={{ aspectRatio: 1600 / 893, backgroundColor: "#F3F5F6" }}>
+    <div class="center relative expand-onmobile mobile-padding-1800" style={{ "--mobile-padding-1800": "1rem", aspectRatio: 1600 / 893, backgroundColor: "#F3F5F6" }}>
       <div class="center" style={{ aspectRatio: 1180 / 893, height: "100%" }}>
         <div clas="" style={{ aspectRatio: 1180 / 788.02, width: "100%" }}>
           <div class="row col-1200" style={{ justifyContent: "space-between", height: "100%" }}>
@@ -395,7 +475,7 @@ function Home() {
             <div class="col" style={{ aspectRatio: 240 / 788.02, height: "100%", fontFamily: "'Inter'" }}>
               <div style={{ aspectRatio: 240 / 3, backgroundColor: "#FFFFFF" }} />
               <div style={{ aspectRatio: 240 / 16 }} />
-              <span style={{ fontSize: "2rem", color: "#000000", lineHeight: "120%", fontWeight: 700 }}>Platter</span>
+              <span style={{ fontSize: "2rem", color: "#000000", lineHeight: "120%", fontWeight: 700, opacity: "0.9" }}>Platter</span>
               <div style={{ aspectRatio: 240 / 16 }} />
               <span style={{ fontSize: "1rem", maxWidth: "60rem", color: "#3C3C43", lineHeight: "140%" }}>Platter is a place in mobile apps where users can get curated content on culinary, food and ingredients factor as a main attractor.</span>
               <div style={{ aspectRatio: 240 / 19 }} />
@@ -441,6 +521,7 @@ function Home() {
 
       </div>
     </div>
+
   </div>;
 }
 
@@ -691,16 +772,101 @@ function App() {
           <span class="link" onClick={handleClickAbout}>About</span>
           <div style={{ aspectRatio: 50 / 26, height: "100%" }} ></div>
           <span class="link" onClick={handleClickProjects}>Projects</span>
+          {/* <div style={{ aspectRatio: 50 / 26, height: "100%" }} ></div>
+          <span class="link" onClick={handleClickProjects}>Co.lab</span>
+          <div style={{ aspectRatio: 50 / 26, height: "100%" }} ></div>
+          <span class="link" onClick={handleClickProjects}>My Works</span>
+          <div style={{ aspectRatio: 50 / 26, height: "100%" }} ></div>
+          <span class="link" onClick={handleClickProjects}>Producthunter</span>
+          <div style={{ aspectRatio: 50 / 26, height: "100%" }} ></div>
+          <span class="link" onClick={handleClickProjects}>Careerkarma</span> */}
         </div>
       </div>
       {/* END NAVIGATOR */}
 
       <Routes>
+        <Route path="" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="projects" element={<Home />}>
         </Route>
         <Route path="about" element={<About />} />
       </Routes>
+
+      {/* BEGIN COLLAB FORM */}
+      <div class='center' style={{ aspectRatio: 1920 / 864, backgroundImage: `url(${black_background})`, padding: "1rem 0 1rem 0", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+        <div class='col ' style={{ aspectRatio: 1920 / 745.63, color: "white", justifyContent: 'center' }}>
+
+          <span class='center' style={{ fontSize: "2.375rem", fontFamily: "'Poppins'", fontWeight: 800, lineHeight: "105.3%" }}>Interested in collaborating?</span>
+          <div style={{ aspectRatio: 745.63 / 32 }} />
+          <span class='' style={{ aspectRatio: 745.63 / 84, fontFamily: "'Poppins'", textAlign: 'center', lineHeight: "150%" }}>If you have an application you are interested in developing, a feature that you<br />need built or a project that need coding, I’d love to help you with it.</span>
+          <div style={{ aspectRatio: 745.63 / 22 }} />
+          <div class='row col-1200 expand-onmobile' style={{ aspectRatio: 745.63 / 59, fontSize: "1rem" }}>
+            <div style={{ aspectRatio: 361.815 / 59 }}>
+              <input placeholder='Subjet' class='' style={{ width: "100%", height: "100%", fontFamily: "'Poppins'", paddingLeft: "0", fontSize: "1rem", boxSizing: "border-box", lineHeight: "150%" }} />
+            </div>
+            <div style={{ aspectRatio: 22 / 59, height: "100%" }} />
+            <div style={{ aspectRatio: 361.815 / 59, }}>
+              <input placeholder='Mail' style={{ width: "100%", height: "100%", fontFamily: "'Poppins'", paddingLeft: "0", fontSize: "1rem", boxSizing: "border-box", lineHeight: "150%" }} />
+            </div>
+
+          </div>
+          <div style={{ aspectRatio: 745.63 / 21 }} />
+          <textarea placeholder='Message' style={{ aspectRatio: 745.63 / 185, fontFamily: "'Poppins'", fontSize: "1rem", boxSizing: "border-box", lineHeight: "150%" }} >
+            Hi Armando!,
+
+            I hope this message finds you well. I wanted to reach out to discuss a potential collaboration opportunity that I believe aligns with your expertise and interests.
+
+
+          </textarea>
+          <div style={{ aspectRatio: 745.63 / 38 }} />
+          <div class='row' style={{ aspectRatio: 745.63 / 59, justifyContent: "center" }} >
+            <span class='link' style={{ textAlign: 'center', fontSize: "1rem", fontFamily: "'Poppins'", fontWeight: 500, lineHeight: "105.3%" }}>Get in touch</span>
+          </div>
+          <div style={{ aspectRatio: 745.63 / 55 }} />
+          <div class='row col-1200 ' style={{ aspectRatio: 745.63 / 34, justifyContent: "center" }} >
+            <div class='center mobile-margin-1200' style={{"--mobile-margin-1200": "0 0 1.5rem 0", width: "100%" , textAlign: "center"}}>
+              <span class='center' style={{ fontSize: "1.125rem", fontFamily: "'Poppins'", fontWeight: 500, lineHeight: "105.3%" }}>armandosoto@sotoarmando.com</span>
+
+            </div>
+            <div class='row ' style={{  height: "100%", width: "100%", justifyContent: "center" }}>
+              <div class='hide-1200  ' style={{ aspectRatio: 54 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={twitter_white_svg} alt="React Logo" style={{ aspectRatio: 27 / 22.31 }} />
+              </div>
+              <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={linkedin_white_svg} alt="React Logo" style={{ aspectRatio: 24.7 / 23.58 }} />
+              </div>
+              <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={angel_white_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+              </div>
+              <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={medium_white_svg} alt="React Logo" style={{ aspectRatio: 28 / 28 }} />
+              </div>
+              <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={stack_white_svg} alt="React Logo" style={{ aspectRatio: 26 / 28.82 }} />
+              </div>
+              <div style={{ aspectRatio: 14 / 28, height: "100%" }} />
+              <div style={{ aspectRatio: 27 / 28, justifyContent: "center", alignItems: "center" }}>
+                <img class='link' src={github_white_b_svg} alt="React Logo" style={{ aspectRatio: 27.46 / 27 }} />
+              </div>
+
+
+
+
+            </div>
+          </div>
+          <div style={{ aspectRatio: 745.63 / 39 }} />
+          <div style={{ aspectRatio: 745.63 / 1 }} />
+          <div style={{ aspectRatio: 745.63 / 20 }} />
+          <div class='row center' style={{ aspectRatio: 745.63 / 34 }} >
+            <span class='center' style={{ fontSize: "1rem", fontFamily: "'Poppins'", fontWeight: 500, lineHeight: "105.3%" }}>© 2020  Armando Soto</span>
+          </div>
+        </div>
+      </div>
     </div>
 
   );
